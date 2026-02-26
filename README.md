@@ -1,10 +1,4 @@
-
-This project runs in the following steps:
-
-1. Prepare training/testing JSONL data
-2. Build memory with an LLM
-3. Train a scorer model
-4. Run EM-style interaction (rollout + scoring)
+Under Review
 
 # Requirement
 + torch
@@ -46,8 +40,7 @@ CUDA_VISIBLE_DEVICES=0 python build_scorer.py \
   --dataset ad \
   --dy_jsonl data/AD_train_ratio10.jsonl \
   --test_jsonl data/AD_test_ratio10.jsonl \
-  --output_dir scorer_ad \
-  --runnote ... 
+  --output_dir scorer_ad 
 ```
 
 ## 4) Run interaction (rollout + score)
@@ -58,8 +51,7 @@ CUDA_VISIBLE_DEVICES=0 python em_interaction_modes.py \
   --dataset ad \
   --train_jsonl data/AD_train_ratio10.jsonl  \
   --memory_path ... \
-  --scorer_lora_dir ... \
-  --runnote ... 
+  --scorer_lora_dir ... 
 ```
 
  
