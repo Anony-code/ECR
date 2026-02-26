@@ -36,9 +36,7 @@ First, update `configs/gen_memory_qwen_ad.yaml` so `train_jsonl` points to the t
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python build_memory.py \
-  --config configs/gen_memory_qwen_ad.yaml \
-  --device_map cuda:0 \
-  --runnote demo
+  --config configs/gen_memory_qwen_ad.yaml 
 ```
 
 ## 3) Build scorer
@@ -59,8 +57,8 @@ CUDA_VISIBLE_DEVICES=0 python em_interaction_modes.py \
   --mode preroll \
   --dataset ad \
   --train_jsonl data/AD_train_ratio10.jsonl  \
-  --memory_path artifacts/phase1/ad/ratio10_memory_final_ad.json \
-  --scorer_lora_dir artifacts/phase2/scorer_ad/run1 \
+  --memory_path ... \
+  --scorer_lora_dir ... \
   --runnote ... 
 ```
 
