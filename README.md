@@ -7,17 +7,17 @@ This project runs in the following steps:
 4. Run EM-style interaction (rollout + scoring)
 
 # Requirement
-torch
-transformers>=4.43.0
-accelerate
-safetensors
-tokenizers
-datasets
-peft
-trl
-scikit-learn
-numpy
-pyyaml
++ torch
++ transformers>=4.43.0
++ accelerate
++ safetensors
++ tokenizers
++ datasets
++ peft
++ trl
++ scikit-learn
++ numpy
++ pyyaml
 
 # Datasets
 We evaluate the proposed model using real-world healthcare data and leverage the national [All of Us Research Platform](https://www.researchallofus.org/) to construct the AD and PD cohorts, and employ one regional cohort from the [OHSU EHR data warehouse](https://research-data-catalog.ohsu.edu/records/ksqgw-95972).
