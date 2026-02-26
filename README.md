@@ -20,7 +20,7 @@ numpy
 pyyaml
 
 # Datasets
-We evaluate the proposed model using real-world healthcare data and leverage the national All of Us Research Platform to construct the AD and PD cohorts, and employ one reginal cohort from the OHSU EHR data warehouse
+We evaluate the proposed model using real-world healthcare data and leverage the national [All of Us Research Platform](https://www.researchallofus.org/) to construct the AD and PD cohorts, and employ one regional cohort from the [OHSU EHR data warehouse](https://research-data-catalog.ohsu.edu/records/ksqgw-95972).
 
 # Run
 
