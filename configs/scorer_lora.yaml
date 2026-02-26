@@ -1,0 +1,42 @@
+# update dec 23, version1
+# phase2_make_scorer_dataset
+# phase2_train_scorer_lora
+
+# Generator for reasoning cards (frozen)
+gen_model_id: "openai/gpt-oss-20b"
+gen_device_map: "auto"
+gen_dtype: "auto"
+gen_max_new_tokens: 1024
+
+# Scorer small LLM (trainable with LoRA)
+scorer_model_id: "microsoft/Phi-3-mini-4k-instruct"
+scorer_device_map: "auto"
+scorer_dtype: "auto"
+
+train_jsonl: "data/train.jsonl"
+test_jsonl: "data/test.jsonl"
+
+memory_path: "artifacts/memory_final.json"
+scorer_data_out: "artifacts/scorer_train.jsonl"
+
+lora_out_dir: "artifacts/scorer_lora"
+log_dir: "artifacts/logs"
+
+# LoRA + SFT
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+target_modules: ["qkv_proj", "o_proj", "gate_up_proj", "down_proj"]
+
+max_seq_len: 128
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 4
+learning_rate: 2.0e-4
+num_train_epochs: 2
+warmup_ratio: 0.03
+weight_decay: 0.01
+save_steps: 200
+logging_steps: 25
+
+seed: 7
+

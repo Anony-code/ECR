@@ -1,0 +1,11 @@
+torch
+transformers>=4.43.0
+accelerate
+safetensors
+tokenizers
+datasets
+peft
+trl
+scikit-learn
+numpy
+pyyaml

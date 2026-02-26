@@ -1,0 +1,10 @@
+gen_model_id: "Qwen/Qwen3-4B-Instruct-2507"
+dtype: "auto"
+
+train_jsonl: "data/PD_train_ratio5.jsonl"
+
+memory_in: "artifacts/phase1/pd/ratio5_memory_final_pd.json"
+phase1_text_reasoning_final_output: "artifacts/phase1/pd/qwen-4b-ratio5_final_reasoning_pd.json"
+
+max_new_tokens_reasoning: 30000
+seed: 7

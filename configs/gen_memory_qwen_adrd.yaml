@@ -1,0 +1,23 @@
+gen_model_id: "Qwen/Qwen3-4B-Instruct-2507"
+dtype: "auto"
+
+train_jsonl: "data/ADRD_train_ratio10.jsonl"
+
+memory_out: "artifacts/phase1/adrd/ratio10_memory_final_adrd.json"
+phase1_text_log_reasoning: "artifacts/phase1/adrd/qwen-4b-ratio10_memory_text_reasoning_adrd.jsonl"
+phase1_text_log_calibration: "artifacts/phase1/adrd/qwen-4b-ratio10_memory_text_reflection_adrd.jsonl"
+memory_refresh_log: "artifacts/phase1/adrd/qwen-4b-ratio10_memory_refresh_adrd.jsonl"
+
+max_new_tokens_reasoning: 100000
+max_new_tokens_calibration: 50000
+
+memory_budget:
+  max_templates: 50
+  max_lessons: 50
+
+memory_refresh_every: 1
+seed: 7
+
+json_retries: 1
+
+debug_print_patch: false
