@@ -27,7 +27,7 @@ We evaluate the proposed model using real-world healthcare data and leverage the
 ## 1) Prepare data
 
 ```bash
-python prepare_data.py --dataset ad --fold 0 --ratio 10 --use_neg_ratio --neg_ratio 5
+python prepare_data.py --dataset ad   --ratio 10 
 ```
 
 ## 2) Build memory
@@ -46,22 +46,22 @@ CUDA_VISIBLE_DEVICES=0 python build_memory.py \
 ```bash
 CUDA_VISIBLE_DEVICES=0 python build_scorer.py \
   --dataset ad \
-  --dy_jsonl AD_train_fold0_ratio10_neg5_visit2.jsonl \
-  --test_jsonl AD_test_fold0_ratio10_neg5_visit2.jsonl \
+  --dy_jsonl data/AD_train_ratio10.jsonl \
+  --test_jsonl data/AD_test_ratio10.jsonl \
   --output_dir scorer_ad \
-  --runnote run1
+  --runnote ... 
 ```
 
 ## 4) Run interaction (rollout + score)
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python em_interaction_modes.py \
-  --mode rollout_and_score \
+  --mode preroll \
   --dataset ad \
-  --train_jsonl data/AD_train_fold0_ratio10_neg5_visit2.jsonl \
+  --train_jsonl data/AD_train_ratio10.jsonl  \
   --memory_path artifacts/phase1/ad/ratio10_memory_final_ad.json \
   --scorer_lora_dir artifacts/phase2/scorer_ad/run1 \
-  --runnote em1
+  --runnote ... 
 ```
 
  
